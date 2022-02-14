@@ -1,19 +1,18 @@
-import "./styles.css";
+import "./style.css";
 import { FaTrash } from "react-icons/fa";
-
-export const Card = ({ transaction }) => {
+export const Card = ({ trans, remov, props }) => {
   return (
-    <div className="Card">
-      <div className="left">
-        <h3>{transaction.description}</h3>
-        <p>{transaction.type}</p>
+    <div className="car">
+      <div className="transType">
+        <h3>{trans.description}</h3>
+        <p>{trans.type}</p>
       </div>
-      <div className="right">
+      <div className="removValue">
         <p>
           <span>R$</span>
-          {transaction.value < 0 ? transaction.value * -1 : transaction.value}
+          {trans.value < 0 ? trans.value * -1 : trans.value}
         </p>
-        <button>
+        <button onClick={() => remov(props)}>
           <FaTrash />
         </button>
       </div>

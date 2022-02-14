@@ -1,4 +1,4 @@
-.Card {
+.car {
   width: 520px;
   height: 87px;
   display: flex;
@@ -8,7 +8,7 @@
   justify-content: space-between;
   border-radius: 5px;
 }
-.Card button {
+.car button {
   background-color: #e9ecef;
   width: 22px;
   height: 22px;
@@ -16,24 +16,24 @@
   padding: 6px;
 }
 
-.Card .left {
+.car .transType {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 25px;
 }
 
-.Card .right {
+.car .removValue {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.Card p {
+.car p {
   margin: 0;
 }
 
-.right p {
+.removValue p {
   width: 102px;
   font-size: 12px;
   font-weight: 400;
@@ -41,14 +41,14 @@
   display: flex;
   align-items: center;
 }
-.left p {
+.transType p {
   color: #868e96;
   font-size: 12px;
   font-weight: 400;
 }
 
 @media (max-width: 1050px) {
-  .Card {
+  .car {
     width: 78%;
     height: 87px;
     display: flex;
@@ -57,5 +57,18 @@
     justify-content: space-between;
     border-radius: 5px;
     align-items: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .car {
+    width: 71%;
+    height: 87px;
+    display: flex;
+    background-color: #f8f9fa;
+    margin-bottom: 32px;
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 }

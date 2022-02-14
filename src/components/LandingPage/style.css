@@ -1,0 +1,76 @@
+.preto {
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.princ p {
+  color: #fff;
+  margin-right: 30px;
+  margin-left: 32px;
+}
+.pInfo {
+  font-size: 38px;
+  font-weight: 800;
+  font-family: "Nunito";
+}
+.pDeta {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Nunito";
+}
+.preto button {
+  color: white;
+  background-color: #fd377e;
+  width: 241px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+.preto img {
+  width: 593px;
+  height: 593px;
+}
+
+@media (max-width: 1259px) {
+  .princ {
+    margin-left: 66px;
+  }
+}
+@media (max-width: 1010px) {
+  .preto {
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    width: 100vw;
+    height: 196vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .princ {
+    text-align: -webkit-center;
+  }
+  .preto button {
+    background-color: #fd377e;
+    width: 141px;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .preto img {
+    width: 300px;
+    height: 300px;
+  }
+}

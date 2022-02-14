@@ -1,21 +1,25 @@
-import "./styles.css";
+import "./style.css";
+import { useEffect, useState } from "react";
 import { Card } from "../Card";
 
-export const List = ({ transactions }) => {
+export const List = ({ transactions, remove, seleciona }) => {
   console.log(transactions);
+
   return (
-    <div className="list">
+    <div className="li">
       <header>
         <h2>Resumo Financeiro</h2>
-        <div>
-          <button>Todos</button>
-          <button>Entradas</button>
-          <button>Saidas</button>
+        <div className="buttons">
+          <button onClick={() => seleciona("todos")}>Todos</button>
+          <button onClick={() => seleciona("entra")}>Entradas</button>
+          <button onClick={() => seleciona("sai")}>Saidas</button>
         </div>
       </header>
-      {transactions.map((transaction, index) => (
-        <Card transaction={transaction} key={index} />
-      ))}
+      {transactions.map((transaction, index) => {
+        return (
+          <Card trans={transaction} key={index} props={index} remov={remove} />
+        );
+      })}
     </div>
   );
 };

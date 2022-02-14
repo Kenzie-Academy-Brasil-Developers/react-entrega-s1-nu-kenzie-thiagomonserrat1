@@ -1,0 +1,29 @@
+.total {
+  display: flex;
+  background-color: #e34981;
+  color: #fff;
+  width: 348px;
+  height: 68px;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0px 20px 0px 15px;
+  align-items: center;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 455px) {
+  .total {
+    display: flex;
+    background-color: #e34981;
+    color: #fff;
+    width: 268px;
+    height: 68px;
+    justify-content: space-between;
+    margin-top: 35px;
+    padding: 0px 8px 0px 8px;
+    align-items: center;
+    border-radius: 4px;
+    margin-left: 55px;
+  }
+}
