@@ -1,25 +1,85 @@
+import Card from "../Card";
+// import { useState } from "react"
 import "./style.css";
-import { useEffect, useState } from "react";
-import { Card } from "../Card";
 
-export const List = ({ transactions, remove, seleciona }) => {
-  console.log(transactions);
+function List({
+  listTransactoins,
+  setFiltrados,
+  filtrados,
+  setListTransactions,
+}) {
+  // FUNCAO FILTROS
+  function filtroType(text) {
+    setFiltrados(
+      text === "todos"
+        ? listTransactoins
+        : listTransactoins.filter((item) => item.type === text)
+    );
+  }
+
+  // FUNCAO DELETAR
+  function delItem(id) {
+    const deleta = listTransactoins.filter((item) => item.id !== id);
+    setFiltrados(deleta);
+    setListTransactions(deleta);
+  }
 
   return (
-    <div className="li">
-      <header>
-        <h2>Resumo Financeiro</h2>
-        <div className="buttons">
-          <button onClick={() => seleciona("todos")}>Todos</button>
-          <button onClick={() => seleciona("entra")}>Entradas</button>
-          <button onClick={() => seleciona("sai")}>Saidas</button>
-        </div>
-      </header>
-      {transactions.map((transaction, index) => {
-        return (
-          <Card trans={transaction} key={index} props={index} remov={remove} />
-        );
-      })}
+    <div className="lista">
+      <div className="header">
+        <p>Resumo Financeiro</p>
+        <button
+          onClick={() => filtroType("todos")}
+          type="button"
+          className="todos"
+        >
+          Todos
+        </button>
+        <button
+          onClick={() => filtroType("entrada")}
+          type="button"
+          className="class"
+        >
+          Ganhos
+        </button>
+        <button
+          onClick={() => filtroType("saida")}
+          type="button"
+          className="class class2"
+        >
+          Gastos
+        </button>
+      </div>
+      <div className="itens">
+        {filtrados.length < 1 ? (
+          <>
+            <p className="vazio_p">Você ainda não possui nenhum lançamento</p>
+            <div className="vazio">
+              <div></div>
+              <div></div>
+            </div>
+            <div className="vazio">
+              <div></div>
+              <div></div>
+            </div>
+            <div className="vazio">
+              <div></div>
+              <div></div>
+            </div>
+          </>
+        ) : (
+          filtrados.map((transaction, index) => (
+            <Card
+              transaction={transaction}
+              name={transaction.id}
+              key={index}
+              delItem={delItem}
+            ></Card>
+          ))
+        )}
+      </div>
     </div>
   );
-};
+}
+
+export default List;

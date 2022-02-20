@@ -1,21 +1,30 @@
 import "./style.css";
 import { FaTrash } from "react-icons/fa";
-export const Card = ({ trans, remov, props }) => {
+
+function Card({ transaction, name, listTransactoins, delItem }) {
   return (
-    <div className="car">
-      <div className="transType">
-        <h3>{trans.description}</h3>
-        <p>{trans.type}</p>
-      </div>
-      <div className="removValue">
-        <p>
-          <span>R$</span>
-          {trans.value < 0 ? trans.value * -1 : trans.value}
-        </p>
-        <button onClick={() => remov(props)}>
-          <FaTrash />
-        </button>
-      </div>
-    </div>
+    <>
+      {transaction.type === "entrada" ? (
+        <div className="card card_green">
+          <h2>{transaction.description}</h2>
+          <span>R$ {transaction.value}</span>
+          <button onClick={() => delItem(name)}>
+            <FaTrash />
+          </button>
+          <p>{transaction.type}</p>
+        </div>
+      ) : (
+        <div className="card card_gray">
+          <h2>{transaction.description}</h2>
+          <span>R$ {transaction.value}</span>
+          <button onClick={() => delItem(name)}>
+            <FaTrash />
+          </button>
+          <p>{transaction.type}</p>
+        </div>
+      )}
+    </>
   );
-};
+}
+
+export default Card;

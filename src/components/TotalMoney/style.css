@@ -1,29 +1,111 @@
 .total {
-  display: flex;
-  background-color: #e34981;
-  color: #fff;
-  width: 348px;
-  height: 68px;
-  justify-content: space-between;
-  margin-top: 20px;
-  padding: 0px 20px 0px 15px;
-  align-items: center;
+  width: 330px;
+  height: 50px;
+  margin-top: 5px;
+
+  background: #ffffff;
+
+  border: 1px solid #e9ecef;
+  box-sizing: border-box;
   border-radius: 4px;
-  margin-bottom: 16px;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  color: #f8f9fa;
+
+  display: flex;
+  justify-content: space-between;
+}
+.totalmoney {
+  width: 100%;
+  text-align: -webkit-center;
+}
+.total span {
+  position: absolute;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+  margin: 23px 0px 0px 10px;
+
+  color: #868e96;
 }
 
-@media (max-width: 455px) {
+.total p:first-child {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+
+  color: #212529;
+  padding: 0px 10px 0px 10px;
+}
+
+.total .preco {
+  margin: 10px 10px 0px 0px;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+
+  color: #fd377e;
+}
+
+@media (min-width: 600px) {
+  .total {
+    position: inherit;
+    margin-top: 16px;
+    align-self: flex-start;
+
+    width: 363px;
+    height: 96px;
+  }
+
+  .total .preco {
+    align-self: center;
+    margin-right: 24px;
+    padding: 0px;
+  }
+
+  .total p:first-child {
+    margin: 18px 0px 0px 24px;
+    padding: 0px;
+  }
+
+  .total span {
+    position: absolute;
+
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
+    margin: 56px 0px 0px 26px;
+
+    color: #868e96;
+  }
+}
+
+@media (max-width: 599px) {
   .total {
     display: flex;
-    background-color: #e34981;
-    color: #fff;
-    width: 268px;
-    height: 68px;
-    justify-content: space-between;
-    margin-top: 35px;
-    padding: 0px 8px 0px 8px;
+    flex-direction: column;
+    height: 142px;
     align-items: center;
-    border-radius: 4px;
-    margin-left: 55px;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1187px) {
+  .totalmoney {
+    position: relative;
+    top: 100px;
   }
 }

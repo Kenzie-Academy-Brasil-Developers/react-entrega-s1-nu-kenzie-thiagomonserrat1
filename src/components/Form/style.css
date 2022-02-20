@@ -1,72 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Nunito&display=swap");
+
 form {
-    box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
+  width: 330px;
+  height: 200px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  margin: 20px 0px 0px 0px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+  color: #212529;
+  position: relative;
+}
+.descri {
+  top: 8px;
+}
+
+.input_desc {
+  width: 300px;
+  height: 35px;
+  margin-left: 15px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 16px;
+
+  background: #f8f9fa;
+
+  border: 2px solid #f8f9fa;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: black;
+}
+
+form span {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #868e96;
+}
+
+.div_valor {
+  display: flex;
+  height: 70px;
+}
+
+.valor {
+  position: absolute;
+  margin: 0px 0px 5px 15px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+  color: #212529;
+}
+
+.input_preco {
+  width: 128px;
+  height: 35px;
+  background: #f8f9fa;
+
+  border: 2px solid #f8f9fa;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-left: 15px;
+  margin-top: 25px;
+  text-align: right;
+}
+
+.tipo {
+  position: absolute;
+  margin-left: 179px;
+  margin-top: 0px;
+}
+
+form select {
+  width: 135px;
+  height: 35px;
+  margin-left: 36px;
+  margin-top: 25px;
+
+  background: #f8f9fa;
+
+  border: 2px solid #f8f9fa;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 26px;
+
+  color: #868e96;
+}
+
+form button {
+  width: 300px;
+  height: 35px;
+  margin-top: 5px;
+  align-self: center;
+
+  background: #fd377e;
+
+  border: 2px solid #fd377e;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #ffffff;
+}
+
+@media (min-width: 600px) {
+  form {
+    position: inherit;
+    align-self: flex-start;
+    margin-left: 10%;
+    width: 363px;
+    height: 415px;
+  }
+
+  .input_desc {
+    width: 314px;
+    height: 52.8px;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px;
+  }
+
+  form label {
+    margin: 38px 0px 0px 26px;
+  }
+
+  form span {
+    margin-left: 24px;
+    margin-bottom: 17.7px;
+  }
+
+  .input_preco {
+    height: 48px;
+  }
+
+  form select {
+    height: 48px;
+  }
+
+  form button {
+    margin-top: 19px;
+    width: 314px;
+    height: 48px;
+  }
+}
+@media (max-width: 599px) {
+  .descri {
+    font-size: 17px;
+  }
+  form button {
+    margin-top: 19px;
+    margin-bottom: 10px;
+  }
+  form span {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 1186px) {
+  form {
+    display: contents;
     width: 363px;
     height: 351px;
-    border: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 10px;
-
-}
-form label{
-    display: flex;
-    flex-direction: column;
-    color:#212529;
-    font-size: 12px;
-    padding:0px 15px;
-    font-weight: 400;
-
-    font-family: 'Inter', sans-serif;
-}
-form div {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px;
-
-}
-form input {
-    height: 52.8px;
-    background-color:#F8F9FA ;
-    border: 0ch;
-    border-radius: 8px;
-    width: 314px;
-    color:#868E96;
-    margin: 10px 0px;
-   
-}
-
-form div input {
+  }
+  .input_desc {
+    width: 68%;
+    height: 68px;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px;
+  }
+  form select {
     height: 48px;
-    width:128px;
+    width: 44%px;
+    font-size: 21px;
+  }
+  .input_preco {
+    height: 48px;
+    width: 44%;
+  }
+  .valor {
+    font-size: 21px;
+  }
+  .tipo {
+    position: absolute;
+    margin-left: 207px;
+    font-size: 21px;
+    margin-top: 0px;
+  }
+
+  form label {
+    font-size: 21px;
+  }
+  .total {
+    color: #fd377e;
+  }
 }
 
-form div select{
-    width:150px;
-    height:48px;
-    background-color:#F8F9FA ;
-    border: 0ch;
-    border-radius: 8px;
-    color:#868E96;
-    margin: 10px 0px;
+@media (min-width: 1300px) {
+  form {
+    margin-left: 17%;
+  }
+  .descri {
+    position: relative;
+    right: 147px;
+  }
+  form button {
+    position: relative;
+    top: 28px;
+  }
+}
 
-}
-form p{
-    color:#868E96;
-    margin-top: -8px;
-}
-form button {
-    border: 0ch;
-    border-radius: 8px;
-    height:48px;
-    width:314px;
-    background-color: #FD377E;
-    color:#FFFFFF;
-    font-size: 16px;
-    font-weight: 500;
-}
-form .button{
-    display: flex;
-    justify-content: center;
-}
+/* display: flex;
+margin-left: 23%;
+height: 339px;
+width: 58%; */

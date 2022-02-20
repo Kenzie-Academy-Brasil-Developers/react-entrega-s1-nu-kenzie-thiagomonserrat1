@@ -1,56 +1,82 @@
-import "./style.css";
 import { useState } from "react";
+import TotalMoney from "../TotalMoney";
+import "./style.css";
 
-export const Form = ({ transactions, setTransactions, saveTransaction }) => {
-  const [input, setInput] = useState({
+function Form({
+  setListTransactions,
+  listTransactoins,
+  setFiltrados,
+  filtrados,
+}) {
+  const [conta, setConta] = useState({
     description: "",
-    type: "entrada",
-    value: 0,
+    type: "",
+    value: "",
+    id: 0,
   });
+  const [cont, setCont] = useState(1);
+
+  const change = (e) => {
+    const { name, value } = e.target;
+    setConta((antes) => ({ ...antes, [name]: value }));
+  };
+
+  function handleChange(e) {
+    setConta({ ...conta, type: e.target.value });
+  }
+
+  function addConta(conta) {
+    setListTransactions([...listTransactoins, conta]);
+    setFiltrados([...filtrados, conta]);
+    console.log(listTransactoins);
+  }
 
   return (
-    <form onSubmit={(event) => event.preventDefault()}>
-      <label>
+    <form>
+      <label className="descri" for="descricao">
         Descrição
-        <input
-          placeholder="Digite sua descrição"
-          value={input.description}
-          onChange={(event) =>
-            setInput({ ...input, description: event.target.value })
-          }
-        />
-        <p>Ex:Compra de roupas</p>
       </label>
-      <div>
-        <label>
-          Valor
-          <input
-            type="number"
-            placeholder="  1                       R$"
-            value={input.value}
-            onChange={(event) =>
-              setInput({ ...input, value: event.target.value })
-            }
-          />
-        </label>
-        <label>
-          Tipo de valor
-          <select
-            value={input.type}
-            onChange={(event) =>
-              setInput({ ...input, type: event.target.value })
-            }
-          >
-            <option value="Entrada" defaultValue>
-              Entrada
-            </option>
-            <option value="Saída">Saída</option>
-          </select>
-        </label>
+      <input
+        className="input_desc"
+        type="text"
+        placeholder="Digite aqui sua descrição"
+        value={conta.description}
+        onChange={change}
+        name="description"
+      ></input>
+      <span>Ex: Compra de roupas</span>
+
+      <div className="div_valor">
+        <label className="valor">Valor</label>
+        <input
+          className="input_preco"
+          type="number"
+          placeholder="R$"
+          value={conta.value}
+          onChange={change}
+          name="value"
+        ></input>
+        <label className="tipo">Tipo de Valor</label>
+
+        <select name="type" onClick={(e) => handleChange(e)}>
+          <option>Selecione</option>
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saida</option>
+        </select>
       </div>
-      <div className="button">
-        <button onClick={() => saveTransaction(input)}>Inserir Valor</button>
-      </div>
+      <button
+        onClick={() => {
+          setConta({ ...conta, id: cont });
+          addConta(conta);
+          setCont(cont + 1);
+        }}
+        type="button"
+      >
+        Inserir Valor
+      </button>
+      <TotalMoney listTransactoins={listTransactoins} />
     </form>
   );
-};
+}
+
+export default Form;

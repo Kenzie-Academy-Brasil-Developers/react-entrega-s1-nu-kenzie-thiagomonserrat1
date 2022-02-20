@@ -1,37 +1,136 @@
-.Container {
-  display: flex;
-  margin: 100px;
-  width: 1000px;
-  display: flex;
-  /* align-items: ; */
-  /* justify-content: ; */
-  margin: 0%;
-}
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Nunito&display=swap");
 
-.divMain {
+.App {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  /* width: 100%; */
+  height: 100%;
 }
 
-@media (max-width: 1050px) {
-  .Container {
+/* Header ######################################## */
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #f8f9fa;
+  box-shadow: 0px 5px 32px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  width: 122px;
+  height: 19px;
+  margin-left: 5%;
+}
+
+header button {
+  margin-right: 5%;
+  width: 64px;
+  height: 30px;
+  background-color: #e9ecef;
+  border: 1.4px solid #e9ecef;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #868e96;
+}
+
+header button:hover {
+  background-color: #868e96;
+  color: #ffffff;
+}
+
+header button:active {
+  background-color: #fd377e;
+  color: #ffffff;
+}
+
+/* HOME ################################################################## */
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* circulos ##################################################################### */
+.figura {
+  width: 593px;
+  height: 593px;
+  display: flex;
+}
+
+.botao1 {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #fd377e;
+  margin-left: 120px;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+.botao2 {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #66c085;
+  margin-left: 150px;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+.botao3 {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #000;
+  margin-left: 180px;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+@media (min-width: 600px) {
+  .App {
     display: flex;
     flex-direction: column;
-    align-content: stretch;
-    align-items: center;
-    width: 64%;
   }
-  .divMain {
+
+  header {
+    height: 88px;
+  }
+
+  header img {
+    margin-left: 10%;
+  }
+
+  header button {
+    margin-right: 10%;
+    height: 40px;
+  }
+
+  .home {
+    margin-top: 150px;
+    width: auto;
+
     display: flex;
-    align-items: center;
-    /* width: 100%; */
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
   }
 }
 
-@media (min-width: 656px) {
+@media (min-width: 1400px) {
+  header img {
+    margin-left: 17%;
+  }
+
+  header button {
+    margin-right: 17%;
+  }
 }

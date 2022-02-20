@@ -1,13 +1,16 @@
-import "./styles.css";
-import { Logo } from "../Logo";
+import Logo from "../Imagens/logo.png";
+import "./style.css";
+import { useHistory } from "react-router-dom";
 
-export const Header = ({ page }) => {
+const Header = () => {
+  const history = useHistory();
+
   return (
     <header>
-      <div className="content">
-        <Logo page={page} />
-        <button>Inicio</button>
-      </div>
+      <img src={Logo} alt="Logo"></img>
+      <button onClick={() => history.push("/")}>Inicio</button>
     </header>
   );
 };
+
+export default Header;
